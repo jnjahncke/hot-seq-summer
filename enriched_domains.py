@@ -10,38 +10,11 @@
 #
 # Output: list of enriched domains
 
+import sys
 from math import comb
 # these two imports are just to get sample data
 from mus_sampledata import *
 from mus_sampledomains import *
-
-gene_dict = mus_sampledata() # this is sample data
-domain_dict = mus_sampledomains() # this is sample data
-
-# Determine upregulated/downregulated genes:
-#	Upregulated: pvalue < 0.05, logFC > 0
-#	Downregulated: pvalue < 0.05, logFC < 0
-domains_upreg = []
-domains_downreg = []
-num_up = 0
-num_down = 0
-for gene in gene_dict:
-	if gene_dict[gene]["pvalue"] < 0.05:
-		if gene_dict[gene]["logFC"] > 0:
-			num_up += 1
-			for domain in domain_dict[gene]:
-				domains_upreg.append(domain)
-		if gene_dict[gene]["logFC"] < 0:
-			num_down += 1
-			for domain in domain_dict[gene]:
-				domains_downreg.append(domain)
-
-# Determine if domains in up/downregulated genes are enriched above chance
-# First: what is the set of all the possible domains we could have pulled? (One of each domain)
-domains_all = []
-for gene in domain_dict:
-	for domain in domain_dict[gene]:
-		domains_all.append(domain)
 
 # Probability mass function
 # Takes a specific domain, list of all domains, and a list of domains from diff expressed genes
@@ -58,12 +31,61 @@ def hypergeometry(domain,domains_all,domains_diff):
 			break
 	return(prob)
 
-# Print out p-values for upregulated domains
-print("# Domains in upregulated genes:")
-for domain in set(domains_all):
-	print(domain, hypergeometry(domain, domains_all, domains_upreg))
 
-# Print out p-values for downregulated domains
-print("# Domains in downregulated genes:")
-for domain in set(domains_all):
-	print(domain, hypergeometry(domain, domains_all, domains_downreg))
+
+def main():
+
+	# Check for appropriate command line input
+	progname = sys.argv[0]
+	usage = f'\n\n\tusage: {progname} <up or down>'
+	
+	if len(sys.argv) < 2:
+		sys.stderr.write(usage)
+		sys.exit(1)
+
+	# define direction (up/down), gene dictionary, and domain dictionary
+	diff_direction = sys.argv[1]
+	gene_dict = mus_sampledata() # this is sample data
+	domain_dict = mus_sampledomains() # this is sample data
+
+	# Determine upregulated/downregulated genes:
+	#	Upregulated: pvalue < 0.05, logFC > 0
+	#	Downregulated: pvalue < 0.05, logFC < 0
+	domains_upreg = []
+	domains_downreg = []
+	num_up = 0
+	num_down = 0
+	for gene in gene_dict:
+		if gene_dict[gene]["pvalue"] < 0.05:
+			if gene_dict[gene]["logFC"] > 0:
+				num_up += 1
+				for domain in domain_dict[gene]:
+					domains_upreg.append(domain)
+			if gene_dict[gene]["logFC"] < 0:
+				num_down += 1
+				for domain in domain_dict[gene]:
+					domains_downreg.append(domain)
+
+	# Determine if domains in up/downregulated genes are enriched above chance
+	# First: what is the set of all the possible domains we could have pulled? (One of each domain)
+	domains_all = []
+	for gene in domain_dict:
+		for domain in domain_dict[gene]:
+			domains_all.append(domain)
+
+	# Loop through hypergeometry() function
+	if diff_direction.lower() == "up":
+		# Print out p-values for upregulated domains
+		print("# Domains in upregulated genes:")
+		for domain in set(domains_all):
+			print(f'{domain}\t{hypergeometry(domain, domains_all, domains_upreg)}')
+	elif diff_dicrection.lower() == "down":
+		# Print out p-values for downregulated domains
+		print("# Domains in downregulated genes:")
+		for domain in set(domains_all):
+			print(f'{domain}\t{hypergeometry(domain, domains_all, domains_downreg)}')
+
+	sys.exit(0)
+
+if __name__ == "__main__":
+	main()
