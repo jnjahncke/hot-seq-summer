@@ -10,6 +10,7 @@
 #
 # Output: list of enriched domains
 
+from math import comb
 # these two imports are just to get sample data
 from mus_sampledata import *
 from mus_sampledomains import *
@@ -41,4 +42,28 @@ domains_all = []
 for gene in domain_dict:
 	for domain in domain_dict[gene]:
 		domains_all.append(domain)
-domains_all = set(domains_all)
+
+# Probability mass function
+# Takes a specific domain, list of all domains, and a list of domains from diff expressed genes
+# Probability that we have k or more occurrences of domain in up/downreg list
+def hypergeometry(domain,domains_all,domains_diff):
+	bigN = len(domains_all)
+	n = len(domains_diff)
+	bigK = domains_all.count(domain)
+	k = domains_diff.count(domain)
+	prob = 0
+	for num in range(k,bigK+1):	
+		prob += comb(bigK,num) * comb(bigN-bigK,n-num) / comb(bigN,n)
+		if comb(bigK,num) * comb(bigN-bigK,n-num) / comb(bigN,n) < 0.0001:
+			break
+	return(prob)
+
+# Print out p-values for upregulated domains
+print("# Domains in upregulated genes:")
+for domain in set(domains_all):
+	print(domain, hypergeometry(domain, domains_all, domains_upreg))
+
+# Print out p-values for downregulated domains
+print("# Domains in downregulated genes:")
+for domain in set(domains_all):
+	print(domain, hypergeometry(domain, domains_all, domains_downreg))
