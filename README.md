@@ -28,3 +28,4 @@
     * The number of shared domains between the two lists
     * The number of domains only enriched in list1
     * The number of domains only enriched in list2
+    * Program will prompt you to ask if you want to see any of the domain lists printed to std out. Choices: (0 = no list), (1 = domains unique to list1), (2 = domains unique to list2), (3 = shared domains)
