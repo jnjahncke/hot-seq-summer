@@ -1,4 +1,4 @@
-DROSI09977# field names: ensebmle accession<tab>log2foldchange<tab>pvalue
+# field names: ensebmle accession<tab>log2foldchange<tab>pvalue
 SELMODRAFT_25673	-6.7	0.00564
 SELMODRAFT_74933	0.89	0.0952
 SELMODRAFT_403157	0.2	0.874
