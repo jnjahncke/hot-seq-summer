@@ -1,0 +1,10 @@
+# Orthologous groups from OMA release of All.Nov2021
+# This release has 1115445 groups covering 13481594 proteins from 2496 species
+# Format: group number<tab>Fingerprint<tab>tab-separated list of OMA Entry IDs
+1	PYROC00001	CF15_00005.1
+2	PYROC00001	CF15_00005.1
+3	PYROC00002	CF15_00010.1
+4	PYROC00003	CF15_00015.1
+5	PYROC00004	CF15_00020.1
+6	PYROC00005	CF15_00025.1
+7	PYROC00006	CF15_00030.1
