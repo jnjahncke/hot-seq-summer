@@ -12,8 +12,7 @@
 
 import sys
 from math import comb
-# these two imports are just to get sample data
-from mus_dict import *
+from rnaseq_to_dict import *
 
 # Probability mass function
 # Takes a specific domain, list of all domains, and a list of domains from diff expressed genes
@@ -51,14 +50,14 @@ def diff_exp_domains(gene_dict, domain_dict, direction):
 	for gene in gene_dict:
 		try:
 			if direction.lower() == "up":
-				if gene_dict[gene]["pvalue"] < 0.05:
-					if gene_dict[gene]["logFC"] > 0:
+				if gene_dict[gene][1] < 0.05: # pvalue < 0.05
+					if gene_dict[gene][0] > 0: # logFC > 0
 						num_diff += 1
 						for domain in domain_dict[gene]:
 							domains_diff.append(domain)
 			if direction.lower() == "down":
-				if gene_dict[gene]["pvalue"] < 0.05:
-					if gene_dict[gene]["logFC"] < 0:
+				if gene_dict[gene][1] < 0.05: # pvalue < 0.05
+					if gene_dict[gene][0] < 0: # logFC < 0
 						num_diff += 1
 						for domain in domain_dict[gene]:
 							domains_diff.append(domain)
@@ -77,16 +76,25 @@ def main():
 		sys.stderr.write(usage)
 		sys.exit(1)
 
-	# define direction (up/down), gene dictionary, and domain dictionary
+	# parse inputs
 	diff_direction = sys.argv[1]
 	species = sys.argv[2]
-	gene_dict = mus_dict() # this is sample data
+
+	# get gene dict using rna_seqs_to_dict
+	if species == "mmusculus":
+		input_file = "mus_rna_seq_final.txt"
+	elif species == "hsapiens":
+		input_file = "HUMAN_genes.txt"
+	elif species == "scerevisiae":
+		input_file = "yeast_degs.txt"
+	gene_dict = rnaseqs_to_dict([input_file]) # defned in rnaseq_to_dict.py
+	gene_dict = gene_dict[list(gene_dict.keys())[0]]
 
 	# Make dictionary comaining all domains for all genes in a species
-	domain_dict = make_domain_dict(species)
+	domain_dict = make_domain_dict(species) # defined above
 
 	# For that species, make a list of all domains from differentially expressed genes
-	domains_diff = diff_exp_domains(gene_dict, domain_dict, diff_direction)
+	domains_diff = diff_exp_domains(gene_dict, domain_dict, diff_direction) # defined above
 
 	# Determine if domains in up/downregulated genes are enriched above chance
 	# First: what are all the possible domains we could have pulled?
@@ -95,7 +103,7 @@ def main():
 		for domain in domain_dict[gene]:
 			domains_all.append(domain)
 
-	# Loop through hypergeometry() function
+	# Loop through hypergeometry() function (defined above)
 	# Print out p-values for differentially expressed domains that are enriched
 	for domain in set(domains_all):
 		prob = hypergeometry(domain, domains_all, domains_diff)

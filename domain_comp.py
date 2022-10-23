@@ -42,3 +42,20 @@ list2 (all): {len(diff_domains2)}
 shared: {len(shared)}
 list1 (only): {len(only_1)}
 list2 (only): {len(only_2)}''')
+
+print("\nDo you want a list of domains?")
+print("Choices: (0 = no list), (1 = domains unique to list1), (2 = domains unique to list2), (3 = shared domains)")
+todo = int(input("Type your choice here: "))
+while todo > 0:
+	if todo == 1:
+		print(only_1)
+		todo = int(input("Type another choice: "))
+	elif todo == 2:
+		print(only_2)
+		todo = int(input("Type another choice: "))
+	elif todo == 3:
+		print(shared)
+		todo = int(input("Type another choice: "))
+	else:
+		todo = 0
+		pass
