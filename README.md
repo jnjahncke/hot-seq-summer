@@ -13,11 +13,11 @@ RNAseq datasets looking at differentially expressed genes in response to heat st
 
 ##### Turning RNA Seq data into a dictionary:
 
-`rnaseqs_to_dict()`: Inputs a formatted text file (or files) with 3 columns of RNAseq data: Ensembl ID, log fold change, and p value. Outputs an RNAseq nested dict with {key:filename: value = {key=geneID: value = [logFC, pvalue]}}. **To run:** `rnaseqs_to_dict([list of file(s)])`. *Note that even if you are only inputting one file it needs to be in a list.*
+`rnaseqs_to_dict()`: Inputs a formatted text file (or files) with 3 columns of RNAseq data: Ensembl ID, log fold change, and p value. Outputs an RNAseq nested dict with {key:filename: value = {key=geneID: value = [logFC, pvalue]}}. **To run:** `rnaseqs_to_dict([list of file(s)])`. *Note that even if you are only inputting one file it needs to be in a list.* (This function is based off of `rnaseq_to_dict.py`.)
 
 ##### Getting domains/GO terms:
 
-`species_annotation_df()` can output Ensembl IDs with domains (from pfam) or GO terms (from Ensembl). **To run:** `species_annotation_df(<species>, <annotation type>)` where species = "hsapiens", "mmusculus", or "scerevisiae" and annotation = "pfam" for domains or "go_id" for GO terms.
+`species_annotation_df()` can output Ensembl IDs with domains (from pfam) or GO terms (from Ensembl). **To run:** `species_annotation_df(<species>, <annotation type>)` where species = "hsapiens", "mmusculus", or "scerevisiae" and annotation = "pfam" for domains or "go_id" for GO terms. (This function is based off of `annotation_download.py`.)
 
 ### Enriched Domains:
 
