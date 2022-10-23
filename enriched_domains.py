@@ -13,8 +13,7 @@
 import sys
 from math import comb
 # these two imports are just to get sample data
-from mus_sampledata import *
-from mus_sampledomains import *
+from mus_dict import *
 
 # Probability mass function
 # Takes a specific domain, list of all domains, and a list of domains from diff expressed genes
@@ -31,59 +30,77 @@ def hypergeometry(domain,domains_all,domains_diff):
 			break
 	return(prob)
 
+# create domain dictionary
+def make_domain_dict(species):
+	domain_dict = {}
+	with open(species + "_pfam.txt","r") as file_in:
+		for line in file_in:
+			line = line.rstrip().split("\t")
+			if line[0] not in domain_dict:
+				domain_dict[line[0]] = [line[1]]
+			else:
+				domain_dict[line[0]].append(line[1])
+	return(domain_dict)
+
+# Take a gene dictionary, determine which genes are up or down regulated
+	#	Upregulated: pvalue < 0.05, logFC > 0
+	#	Downregulated: pvalue < 0.05, logFC < 0
+def diff_exp_domains(gene_dict, domain_dict, direction):
+	domains_diff = []
+	num_diff = 0
+	for gene in gene_dict:
+		try:
+			if direction.lower() == "up":
+				if gene_dict[gene]["pvalue"] < 0.05:
+					if gene_dict[gene]["logFC"] > 0:
+						num_diff += 1
+						for domain in domain_dict[gene]:
+							domains_diff.append(domain)
+			if direction.lower() == "down":
+				if gene_dict[gene]["pvalue"] < 0.05:
+					if gene_dict[gene]["logFC"] < 0:
+						num_diff += 1
+						for domain in domain_dict[gene]:
+							domains_diff.append(domain)
+		except:
+			continue
+	return(domains_diff)
 
 
 def main():
 
 	# Check for appropriate command line input
 	progname = sys.argv[0]
-	usage = f'\n\n\tusage: {progname} <up or down>'
+	usage = f'\n\n\tusage: {progname} <up or down> <species>\n<species> = "mmusculus", "hsapiens", "scerevisiae"'
 	
-	if len(sys.argv) < 2:
+	if len(sys.argv) < 3:
 		sys.stderr.write(usage)
 		sys.exit(1)
 
 	# define direction (up/down), gene dictionary, and domain dictionary
 	diff_direction = sys.argv[1]
-	gene_dict = mus_sampledata() # this is sample data
-	domain_dict = mus_sampledomains() # this is sample data
+	species = sys.argv[2]
+	gene_dict = mus_dict() # this is sample data
 
-	# Determine upregulated/downregulated genes:
-	#	Upregulated: pvalue < 0.05, logFC > 0
-	#	Downregulated: pvalue < 0.05, logFC < 0
-	domains_upreg = []
-	domains_downreg = []
-	num_up = 0
-	num_down = 0
-	for gene in gene_dict:
-		if gene_dict[gene]["pvalue"] < 0.05:
-			if gene_dict[gene]["logFC"] > 0:
-				num_up += 1
-				for domain in domain_dict[gene]:
-					domains_upreg.append(domain)
-			if gene_dict[gene]["logFC"] < 0:
-				num_down += 1
-				for domain in domain_dict[gene]:
-					domains_downreg.append(domain)
+	# Make dictionary comaining all domains for all genes in a species
+	domain_dict = make_domain_dict(species)
+
+	# For that species, make a list of all domains from differentially expressed genes
+	domains_diff = diff_exp_domains(gene_dict, domain_dict, diff_direction)
 
 	# Determine if domains in up/downregulated genes are enriched above chance
-	# First: what is the set of all the possible domains we could have pulled? (One of each domain)
+	# First: what are all the possible domains we could have pulled?
 	domains_all = []
 	for gene in domain_dict:
 		for domain in domain_dict[gene]:
 			domains_all.append(domain)
 
 	# Loop through hypergeometry() function
-	if diff_direction.lower() == "up":
-		# Print out p-values for upregulated domains
-		print("# Domains in upregulated genes:")
-		for domain in set(domains_all):
-			print(f'{domain}\t{hypergeometry(domain, domains_all, domains_upreg)}')
-	elif diff_dicrection.lower() == "down":
-		# Print out p-values for downregulated domains
-		print("# Domains in downregulated genes:")
-		for domain in set(domains_all):
-			print(f'{domain}\t{hypergeometry(domain, domains_all, domains_downreg)}')
+	# Print out p-values for differentially expressed domains that are enriched
+	for domain in set(domains_all):
+		prob = hypergeometry(domain, domains_all, domains_diff)
+		if prob < 0.05:
+			print(f'{domain}\t{prob}')
 
 	sys.exit(0)
 
