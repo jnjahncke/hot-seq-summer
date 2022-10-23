@@ -7,7 +7,7 @@ def make_oma_dict():
 	oma_dict = {}
 
 ## create a dictionary of oma accession numbers belonging to each oma group.
-## key:value pairs are oma_group:[list of genes]
+## oma_dict format: omaID : oma_group
 	with open(oma_file, 'r') as file_obj:
 		for line in file_obj:
 			if '#' in line:
@@ -15,12 +15,17 @@ def make_oma_dict():
 			else:
 				line= line.rstrip()
 				group_list = line.split('\t')
-				oma_dict[group_list[0]] = group_list[2:]
-	print(f'''
+				for gene in group_list:
+					if group_list.index(gene) == 0:
+						continue
+					else:
+						oma_dict[gene] = group_list[0]
+
+		print(f'''
 Dictionary of genes belonging to oma groups complete!
-key:value pairs are oma_group:[list of genes]
+key:value pairs are omaID : oma_group
 ''')
-	return(oma_dict)
+		return(oma_dict)
 
 
 def omaID_to_ensID():
@@ -40,16 +45,7 @@ def omaID_to_ensID():
 Oma to ensemble accession dict done!
 key:values are oma:ens
 ''')
-
-#	orthos_ensID = {}
-
-#	for group in oma_dict:
-#		gene_list = oma_dict[group]
-#		orthos_ensID[group] = []
-#		for gene in gene_list:
-#			orthos_ensID[group].append(o2e_dict)
-
-#	print(orthos_ensID)
+	return(o2e_dict)
 
 #def main():
 #print(f'File meant to be run within another script')
