@@ -44,7 +44,7 @@ def main():
 	rna_seq_data = pd.merge(ensIDs_df, subset)
 	rna_seq_data = rna_seq_data.iloc[:,1:] # select all rows, eliminate first column (genes)
 	rna_seq_data = rna_seq_data[(rna_seq_data['EnsID'] != "NA")] # filter out NAs
-	rna_seq_data.to_csv("mus_rna_seq_final.txt", sep = "\t")
+	rna_seq_data.to_csv("mus_rna_seq_final.txt", index = False, sep = "\t")
 
 if __name__ == '__main__':
 	main()
