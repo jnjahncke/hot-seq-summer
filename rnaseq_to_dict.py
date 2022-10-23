@@ -16,24 +16,20 @@ def rnaseqs_to_dict(rnaseq_files):
   
   for file in rnaseq_files:
     with open(file, 'r') as rnaseq_file:
-      lineNum = 1
+      next(rnaseq_file)
       for line in rnaseq_file:
         line = line.rstrip()
-        geneID, valueLFC, valueP = line.split('\t')
 
-        # Skip the header
-        if lineNum == 1:
-          lineNum += 1
-          next
-    
         # Create a new filename key and add entry to dictionary
-        elif rnaseq_file not in combined_rnaseq_dict:
-          combined_rnaseq_dict[rnaseq_file] = {}
-          combined_rnaseq_dict[rnaseq_file][geneID] = [valueLFC, valueP]
+        if file not in combined_rnaseq_dict:
+          geneID, valueLFC, valueP = line.split('\t')
+          combined_rnaseq_dict[file] = {}
+          combined_rnaseq_dict[file][geneID] = [float(valueLFC), float(valueP)]
 
         # Add entry to existing filename key
         else:
-          combined_rnaseq_dict[rnaseq_file][geneID] = [valueLFC, valueP]
+          geneID, valueLFC, valueP = line.split('\t')
+          combined_rnaseq_dict[file][geneID] = [float(valueLFC), float(valueP)]
           
   return(combined_rnaseq_dict)
 
