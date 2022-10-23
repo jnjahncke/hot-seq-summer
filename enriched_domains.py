@@ -82,11 +82,11 @@ def main():
 
 	# get gene dict using rna_seqs_to_dict
 	if species == "mmusculus":
-		input_file = "mus_rna_seq_final.txt"
+		input_file = "RawData/mus_rna_seq_final.txt"
 	elif species == "hsapiens":
-		input_file = "HUMAN_genes.txt"
+		input_file = "RawData/HUMAN_genes.txt"
 	elif species == "scerevisiae":
-		input_file = "yeast_degs.txt"
+		input_file = "RawData/yeast_degs.txt"
 	gene_dict = rnaseqs_to_dict([input_file]) # defned in rnaseq_to_dict.py
 	gene_dict = gene_dict[list(gene_dict.keys())[0]]
 

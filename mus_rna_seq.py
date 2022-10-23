@@ -25,7 +25,7 @@ def gene_name2id(gene, species):
 
 def main():
 
-	rna_seq_data_in = pd.read_excel("mus_rnaseq_data.xlsx", sheet_name = "mRNA-seq Data")
+	rna_seq_data_in = pd.read_excel("RawData/mus_rnaseq_data.xlsx", sheet_name = "mRNA-seq Data")
 	subset = rna_seq_data_in.loc[:,["gene","HS135logFC","HS135PValue"]]
 
 	genes = []
@@ -44,7 +44,7 @@ def main():
 	rna_seq_data = pd.merge(ensIDs_df, subset)
 	rna_seq_data = rna_seq_data.iloc[:,1:] # select all rows, eliminate first column (genes)
 	rna_seq_data = rna_seq_data[(rna_seq_data['EnsID'] != "NA")] # filter out NAs
-	rna_seq_data.to_csv("mus_rna_seq_final.txt", index = False, sep = "\t")
+	rna_seq_data.to_csv("ProcessedData/mus_rna_seq_final.txt", index = False, sep = "\t")
 
 if __name__ == '__main__':
 	main()
