@@ -12,7 +12,7 @@ import re
 
 
 
-def species_annotation_dict(species, annotation_type):
+def species_annotation_df(species, annotation_type):
 
   # A Dataset instance can be constructed directly if the name of the dataset and the url of the host are know
   dataset = Dataset(name=f"{species}_gene_ensembl", host='http://www.ensembl.org')
@@ -57,7 +57,7 @@ def main ():
   annotation_type = sys.argv[2].lower()
 
   # Call the function to make the dictionary
-  dict_to_write = species_annotation_dict(species, annotation_type)  
+  dict_to_write = species_annotation_df(species, annotation_type)  
  
   # Because dictionaries take minutes to load, they are written to a file to avoid re-downloading 
   annotationDF_txt = open(f"{species}_{annotation_type}.txt", "w")
