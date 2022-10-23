@@ -29,11 +29,11 @@ def rnaseqs_to_dict(rnaseq_files):
         # Create a new filename key and add entry to dictionary
         elif rnaseq_file not in combined_rnaseq_dict:
           combined_rnaseq_dict[rnaseq_file] = {}
-          combined_rnaseq_dict[rnaseq_file][geneID] = [valueLFC, valueP]
+          combined_rnaseq_dict[rnaseq_file][geneID] = [float(valueLFC), float(valueP)]
 
         # Add entry to existing filename key
         else:
-          combined_rnaseq_dict[rnaseq_file][geneID] = [valueLFC, valueP]
+          combined_rnaseq_dict[rnaseq_file][geneID] = [float(valueLFC), float(valueP)]
           
   return(combined_rnaseq_dict)
 
