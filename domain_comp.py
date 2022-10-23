@@ -71,7 +71,7 @@ def main():
 # Shared enriched domains:''')
 
 	# Make pfam_id:description dictionary
-	pfam_dict = pfam_list_to_dict("pfam2desc.txt")
+	pfam_dict = pfam_list_to_dict("RawData/pfam2desc.txt")
 
 	# Look up pfam descriptions for each pfam ID
 	shared_descriptions = pfam_id_to_desc(shared, pfam_dict)
