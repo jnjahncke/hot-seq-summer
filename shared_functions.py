@@ -74,6 +74,6 @@ def rnaseqs_to_dict(rnaseq_files):
 
 
 def main():
-
+  exit()
 if __name__ == "__main__":
-	main()
+  main()
