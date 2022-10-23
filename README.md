@@ -33,4 +33,4 @@ RNAseq datasets looking at differentially expressed genes in response to heat st
     * The number of domains only enriched in list2
     * For each shared domain: the description for the corresponding pfam ID
   * In order to look up the domain description from pfam ID:
-    * Download `pfamA.txt` [from pfam](https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/): `wget “https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/pfamA.txt.gz”`; extract necessary columns and output to new .txt file with `awk -F"\t" '{print $1 "\t" $4}' pfamA.txt > pfam2desc.txt`
+    * Download `pfamA.txt` from [pfam FTP](https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/): `wget “https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/pfamA.txt.gz”`; extract necessary columns and output to new .txt file with `awk -F"\t" '{print $1 "\t" $4}' pfamA.txt > pfam2desc.txt`
