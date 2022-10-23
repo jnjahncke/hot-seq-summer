@@ -8,7 +8,7 @@ import re
 
 
 
-### Returns separate dictionaries: key=Ensembl stable geneID values=list of pfam IDs for protein domains ###
+### Returns a tsv dataframe text file: Ensembl stable geneID values \t pfam protein domains *or* GO term IDs ###
 
 
 
@@ -46,22 +46,27 @@ def species_annotation_dict(species, annotation_type):
 
 
 
+
+
+
 def main ():
+ 
   # Species options to modify the query to Ensembl Genes 108 database: hsapiens, mmusculus, scerevisiae
-  species = sys.argv[1].lower()
   # Annotation options for Ensembl query: pfam or go_id
+  species = sys.argv[1].lower()
   annotation_type = sys.argv[2].lower()
 
   # Call the function to make the dictionary
   dict_to_write = species_annotation_dict(species, annotation_type)  
-  #print(dict_to_write)
  
   # Because dictionaries take minutes to load, they are written to a file to avoid re-downloading 
   annotationDF_txt = open(f"{species}_{annotation_type}.txt", "w")
+
   
-  # Write each key to a line in the file, note the new line character
-  for gene_id in dict_to_write:
-   annotationDF_txt.write(f"{gene_id}\t{dict_to_write[gene_id]}\n")
+  # Write each key and list item to a line in the file, note the new line character
+  for gene_id in dict_to_write.keys():							# Key
+    for annotationID in range(len(dict_to_write[gene_id])):				# List		
+      annotationDF_txt.write(f"{gene_id}\t{dict_to_write[gene_id][annotationID]}\n")		
   
   # Close file after writing finished
   annotationDF_txt.close()
