@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import sys 
+from oma_to_dict import make_oma_dict
+
 
 ## define the function to pull a list of significantly up and down regulated genes from a dictionary of DEG data
 ## input deg_data must be in the format: {ensemble_ID: {'logFC':value , 'pvalue' : value}}
@@ -19,6 +21,10 @@ def deg_list(deg_data):
 ## DEG files must be in the format: ensemble_ID<tab>logFC<tab>pvalue
 sp1_infile = sys.argv[1]
 sp2_infile = sys.argv[2]
+
+print(f'''
+The deg file for species 1 is: {sp1_infile}
+The deg file for species 2 is: {sp2_infile}''')
 
 ## create empty dicts to be deg_dicts for each species
 sp1_data = {}
@@ -41,18 +47,24 @@ with open(sp2_infile, 'r') as file2_obj:
 			continue
 		else:
 			line = line.rstrip()
-			print(line)
 			data2 = line.split('\t')
 			sp2_data[data2[0]] = {'logFC' : float(data2[1]) , 'pvalue' : float(data2[2])}
 
+print(f'''
+The deg data have been put into dictionaries''')
+
+## read in the oma groups dictionary
+oma_dict = make_oma_dict()
+
 ## create a list of up and down regulated genes for each species using the deg_list function defined above, store the lists in new variables
-up1, down1 = deg_list(sp1_data)
-up2, down2 = deg_list(sp2_data)
+up1_ens, down1_ens = deg_list(sp1_data)
+up2_ens, down2_ens = deg_list(sp2_data)
 
+print(f'''
+Up and down reg genes have been found for both species''')
 
-
-
-
+#for gene in up1_ens:
+	
 
 
 
