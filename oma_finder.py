@@ -2,6 +2,8 @@
 
 import sys 
 from oma_to_dict import *
+from rnaseq_to_dict import *
+
 
 ## define the function to pull a list of significantly up and down regulated genes from a dictionary of DEG data
 ## input deg_data must be in the format: {ensemble_ID: {'logFC':value , 'pvalue' : value}}
@@ -34,38 +36,18 @@ def find_oma_groups(oma_list):
 				oma_groups.add(oma_dict[oma_ID])
 	return(oma_groups)
 
-## Define the input for the DEG files you want to compare
-## DEG files must be in the format: ensemble_ID<tab>logFC<tab>pvalue
-sp1_infile = sys.argv[1]
-sp2_infile = sys.argv[2]
+## define deg data files and the two species being compared
+sp1_file = sys.argv[1]
+sp2_file = sys.argv[2]
+sp_file_list = [sp1_file, sp2_file]
+sp1 = 'YEAST'
+sp2 = 'MOUSE'
 
-print(f'''
-The deg file for species 1 is: {sp1_infile}
-The deg file for species 2 is: {sp2_infile}''')
+## put deg data into dictionary for 2 sp
+sp1_data, sp2_data = rnaseqs_to_dict(sp_file_list)
 
-## create empty dicts to be deg_dicts for each species
-sp1_data = {}
-sp2_data = {}
-
-## lines 28-45 open each DEG file and converts the data into a deg_dict
-## deg_dict format: {ensembleID: {'logFC':value , 'pvalue' : value}}
-with open(sp1_infile, 'r') as file1_obj:
-	for line in file1_obj:
-		if '#' in line:
-			continue
-		else:
-			line = line.rstrip()
-			data = line.split('\t')
-			sp1_data[data[0]] = {'logFC' : float(data[1]) , 'pvalue' : float(data[2])}
-
-with open(sp2_infile, 'r') as file2_obj:
-	for line in file2_obj:
-		if '#' in line:
-			continue
-		else:
-			line = line.rstrip()
-			data2 = line.split('\t')
-			sp2_data[data2[0]] = {'logFC' : float(data2[1]) , 'pvalue' : float(data2[2])}
+print(sp1_data)
+print(sp2_data)
 
 print(f'''
 The deg data have been put into dictionaries''')
@@ -81,20 +63,36 @@ o2e_dict = omaID_to_ensID()
 up1_ensID, down1_ensID = deg_list(sp1_data)
 up2_ensID, down2_ensID = deg_list(sp2_data)
 
+print(f'up1 ens : {up1_ensID}')
+print(f'up2 ens : {up2_ensID}')
+
 print(f'''
-Up and down reg genes have been found for both species''')
+Up and down reg genes have been found for both species
+''')
 
 ## convert the list of ensemble IDs to a list of oma IDs using the function defined above
 up1_omaID = convert_to_oma(up1_ensID)
-down1_omaID = convert_to_oma(down1_ensID)
+#down1_omaID = convert_to_oma(down1_ensID)
 up2_omaID = convert_to_oma(up2_ensID)
-down2_omaID = convert_to_oma(down2_ensID)
+#down2_omaID = convert_to_oma(down2_ensID)
+print(f'up1 omas : {up1_omaID}')
+print(f'up2 omas : {up2_omaID}')
 
 ## find the oma groups for each deg list using the function defined above
 up1_oma_groups = find_oma_groups(up1_omaID)
-down1_oma_groups = find_oma_groups(down1_omaID)
+#down1_oma_groups = find_oma_groups(down1_omaID)
 up2_oma_groups = find_oma_groups(up2_omaID)
-down2_oma_groups = find_oma_groups(down2_omaID)
+#down2_oma_groups = find_oma_groups(down2_omaID)
+
+print(up2_oma_groups)
+
+## find the common oma groups up and down regulated in the species
+
+#common_ups = up1_oma_groups & up2_oma_groups
+
+#print(common_ups)
+
+
 
 
 
