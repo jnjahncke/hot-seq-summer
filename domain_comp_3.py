@@ -5,6 +5,8 @@
 # Output: which domains are enriched in all lists?
 
 import sys
+from shared_functions import *
+import re
 
 def read_domains(test_file1, test_file2, test_file3):
 	# reads the three files, creates three lists of domains
@@ -51,6 +53,19 @@ def pfam_id_to_desc(pfamID_list, pfam_dict):
 	[desc_list.append(pfam_dict[ID]) for ID in pfamID_list]
 	return(desc_list)
 
+def parse_filenames(file1, file2, file3):
+	file_list = [file1, file2, file3]
+	species_list = []
+	diff_direction = []
+	species_dict = {"mmusculus":"Mouse", "hsapiens":"Human", "scerevisiae":"Yeast"}
+	for file in file_list:
+		for found in re.finditer(r"/(\w+?)_(\w+?)reg",file):
+			species_list.append(species_dict[found.group(1)])
+			diff_direction.append(found.group(2))
+	species1, species2, species3 = species_list
+	diff_direction = diff_direction[0]
+	return(species1, species2, species3, diff_direction)
+
 def main():
 
 	# Inputs: two .txt files generated from enriched_domains.py
@@ -92,6 +107,13 @@ def main():
 	# Look up pfam descriptions for each pfam ID
 	shared_descriptions = pfam_id_to_desc(shared, pfam_dict)
 	[print(desc) for desc in shared_descriptions]
+
+	# visualize as venn diagram
+	species1, species2, species3, diff_direction = parse_filenames(test_file1, test_file2, test_file3)
+	make_venn_diagram(species1, species2, species3, # names of species
+					diff_domains1, diff_domains2, diff_domains3, # input lists of domains
+					 "ProcessedData/"+diff_direction+"_domains_venn", # output file name
+					 diff_direction.capitalize()+"regulated Domains") # plot title
 
 
 if __name__ == "__main__":
