@@ -72,8 +72,8 @@ def rnaseqs_to_dict(rnaseq_files):
   return(combined_rnaseq_dict)
 
 
-## define the function to pull a list of significantly up and down regulated genes from a dictionary of DEG data
-## input deg_data must be in the format: {ensemble_ID: {'logFC':value , 'pvalue' : value}}
+## Define the function to pull a list of significantly up and down regulated genes from a dictionary of DEG data
+## Input deg_data must be a dictionary in the format: {ensemble_ID : [logFc, pvalue]}
 def deg_list(deg_data):
   genes_up = []
   genes_down = []
