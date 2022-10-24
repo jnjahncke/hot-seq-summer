@@ -1,6 +1,7 @@
-#!/usr/bin/env python3
+#/usr/bin/env python3
 #pip install gseapy
 import pandas as pd
+from pd import DataFrame as df
 import gseapy as gp
 import matplotlib.pyplot as plt
 from gseapy import Biomart
@@ -13,7 +14,20 @@ import sys
 ## cls with: a list, .cls format file
 
 #read in gene list
-gene_exp=pd.read_csv("mus_rnaseq_data.xlsx", sheet_name = "mRNA-seq Data", encoding='latin-1')
+gene_list = pd.read_csv(sys.argv[0], sep="\t")
+gene_list.head()
+gene_list.sort_values(by='log2FC', axis=0, ascending = True)
+
+glist = gene_list.squeeze().str.strip().to_list()
+print(glist[:10])
+
+# run enrichr
+# if you are only intrested in dataframe that enrichr returned, please set outdir=None
+enr = gp.enrichr(gene_list=gene_list, # or "./tests/data/gene_list.txt", 
+                 gene_sets=['KEGG_2016','KEGG_2021_Human'], 
+                 organism='human', # don't forget to set organism to the one you desired! e.g. Yeast
+                 outdir=None, # don't write to disk               
+                )
 
 #phenoA, phenoB, class_vector =  gp.parser.gsea_cls_parser("mus_rnaseq_data.xlsx")
 #print (class_vector)
@@ -22,7 +36,7 @@ gene_exp=pd.read_csv("mus_rnaseq_data.xlsx", sheet_name = "mRNA-seq Data", encod
 
 ##assigning gsea()
 gs_res = {} 
-gs_res = gp.gsea(data=gene_exp, # or data='./data.txt'		
+gs_res = gp.gsea(data=gene_list, # or data='./data.txt'		
                  gene_sets=sys.argv[1],
                  cls= sys.argv[2],
                  # set permutation_type to phenotype if samples >=15
