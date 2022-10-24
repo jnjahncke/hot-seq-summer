@@ -1,0 +1,123 @@
+GO_terms	p-value	description
+GO:0006457	6.98091795696794e-16	protein folding
+GO:0031323	2.7865000635277234e-12	regulation of cellular metabolic process
+GO:0061077	3.234422781672431e-11	chaperone-mediated protein folding
+GO:0035966	7.08529418293063e-11	response to topologically incorrect protein
+GO:0080090	1.536991495954564e-10	regulation of primary metabolic process
+GO:0006986	3.829860326080222e-10	response to unfolded protein
+GO:0042221	5.15036674619204e-10	response to chemical
+GO:0051171	2.4424057575776774e-09	regulation of nitrogen compound metabolic process
+GO:0009889	1.184601015724251e-08	regulation of biosynthetic process
+GO:0010556	9.352801127531839e-08	regulation of macromolecule biosynthetic process
+GO:0071495	1.425888975480558e-07	cellular response to endogenous stimulus
+GO:0031326	2.0319125188595768e-07	regulation of cellular biosynthetic process
+GO:0008152	2.9270267224709626e-07	metabolic process
+GO:0051716	6.095434860378882e-07	cellular response to stimulus
+GO:0051172	6.390064063921298e-07	negative regulation of nitrogen compound metabolic process
+GO:0044249	7.187956678026501e-07	cellular biosynthetic process
+GO:0010033	8.948990332755607e-07	response to organic substance
+GO:0031325	1.1048468151181127e-06	positive regulation of cellular metabolic process
+GO:0009058	1.3068011625963744e-06	biosynthetic process
+GO:1901564	1.4559597214740943e-06	organonitrogen compound metabolic process
+GO:1901576	1.5839360639260391e-06	organic substance biosynthetic process
+GO:0051338	5.134005687160797e-06	regulation of transferase activity
+GO:0051085	5.423493824469928e-06	chaperone cofactor-dependent protein refolding
+GO:0048523	6.834739506729774e-06	negative regulation of cellular process
+GO:0019219	8.11483401243527e-06	regulation of nucleobase-containing compound metabolic process
+GO:0070887	8.442514094407893e-06	cellular response to chemical stimulus
+GO:0006458	8.555120956391923e-06	'de novo' protein folding
+GO:0010557	9.77967675957759e-06	positive regulation of macromolecule biosynthetic process
+GO:0071704	1.1097181399289748e-05	organic substance metabolic process
+GO:0009891	1.1601168880036899e-05	positive regulation of biosynthetic process
+GO:0044237	1.4456487512542639e-05	cellular metabolic process
+GO:0009719	1.744864959459465e-05	response to endogenous stimulus
+GO:0031324	2.72763010478765e-05	negative regulation of cellular metabolic process
+GO:0051084	2.8076500003105654e-05	'de novo' post-translational protein folding
+GO:0065009	3.181230602123019e-05	regulation of molecular function
+GO:0044238	3.5850070416800724e-05	primary metabolic process
+GO:0031328	3.884028909589764e-05	positive regulation of cellular biosynthetic process
+GO:0051252	5.2751248499723e-05	regulation of RNA metabolic process
+GO:0006807	7.052506200492908e-05	nitrogen compound metabolic process
+GO:0045935	0.00010266694806815523	positive regulation of nucleobase-containing compound metabolic process
+GO:0042325	0.00010593801951843529	regulation of phosphorylation
+GO:0014070	0.00012334570801609803	response to organic cyclic compound
+GO:0009893	0.00013130439765709047	positive regulation of metabolic process
+GO:0009059	0.00015726568037013875	macromolecule biosynthetic process
+GO:0051254	0.0002367499943333982	positive regulation of RNA metabolic process
+GO:0031399	0.00032409614415351455	regulation of protein modification process
+GO:0071310	0.00032449888802234505	cellular response to organic substance
+GO:0019220	0.0003421912368942798	regulation of phosphate metabolic process
+GO:0051174	0.0003456292179912032	regulation of phosphorus metabolic process
+GO:0019538	0.0003714180379240367	protein metabolic process
+GO:0033554	0.0003772900571924118	cellular response to stress
+GO:0071407	0.0003869366992705097	cellular response to organic cyclic compound
+GO:2001141	0.0004916302072909394	regulation of RNA biosynthetic process
+GO:0001932	0.0005661740089027324	regulation of protein phosphorylation
+GO:0032870	0.0006170503422448023	cellular response to hormone stimulus
+GO:0019222	0.0006816916023926852	regulation of metabolic process
+GO:0042026	0.0007077184374872966	protein refolding
+GO:0006355	0.0010514765603308071	regulation of DNA-templated transcription
+GO:1903506	0.0010653612266062714	regulation of nucleic acid-templated transcription
+GO:1902532	0.0010772415010130622	negative regulation of intracellular signal transduction
+GO:0043549	0.0011202010028554274	regulation of kinase activity
+GO:0051173	0.0011856880497588703	positive regulation of nitrogen compound metabolic process
+GO:1902680	0.0012453124190454528	positive regulation of RNA biosynthetic process
+GO:0010604	0.0012897637315139733	positive regulation of macromolecule metabolic process
+GO:0043170	0.0013954923844891917	macromolecule metabolic process
+GO:0060255	0.0014520692078601287	regulation of macromolecule metabolic process
+GO:0048522	0.001475254954188795	positive regulation of cellular process
+GO:0010941	0.0028549911341236383	regulation of cell death
+GO:1903508	0.0035286204049408913	positive regulation of nucleic acid-templated transcription
+GO:0045893	0.0035286204049408913	positive regulation of DNA-templated transcription
+GO:0044260	0.004202126672526967	cellular macromolecule metabolic process
+GO:0043066	0.004311130728803615	negative regulation of apoptotic process
+GO:0045859	0.004541253625883443	regulation of protein kinase activity
+GO:0042981	0.004565523954764682	regulation of apoptotic process
+GO:0060548	0.007705243401612475	negative regulation of cell death
+GO:1901700	0.00811764587771829	response to oxygen-containing compound
+GO:0043067	0.00924274292000685	regulation of programmed cell death
+GO:0043069	0.009904069427319084	negative regulation of programmed cell death
+GO:0043231	1.3867341698985643e-29	intracellular membrane-bounded organelle
+GO:0043227	2.223689592092827e-28	membrane-bounded organelle
+GO:0043229	3.937556410869593e-18	intracellular organelle
+GO:0005634	4.1859801165561693e-17	nucleus
+GO:0043226	2.1639341253107121e-16	organelle
+GO:0005737	1.6581226574473859e-12	cytoplasm
+GO:0005654	1.3819304689410783e-10	nucleoplasm
+GO:0110165	4.267248188316495e-07	cellular anatomical entity
+GO:0005829	4.234373342666982e-06	cytosol
+GO:0005739	0.00048395787240268474	mitochondrion
+GO:0005515	2.6276058581881547e-20	protein binding
+GO:0005488	1.1888173146730177e-11	binding
+GO:0003674	1.8658422443439796e-10	molecular_function
+GO:0051082	6.593282652891977e-10	unfolded protein binding
+GO:0044183	3.7819842415866e-09	protein folding chaperone
+GO:0140662	5.84048539309409e-09	ATP-dependent protein folding chaperone
+GO:0031072	5.687785906034946e-06	heat shock protein binding
+GO:0051087	0.00015727540476037573	chaperone binding
+GO:0003677	0.00224938435002753	DNA binding
+GO:0001228	0.004157230830358031	DNA-binding transcription activator activity, RNA polymerase II-specific
+GO:0001216	0.008084851527667298	DNA-binding transcription activator activity
+GO:0003824	0.008800165673245777	catalytic activity
+GO:0000244	1.956748384484428e-14	spliceosomal tri-snRNP complex assembly
+GO:0000353	2.581192008793963e-14	formation of quadruple SL/U4/U5/U6 snRNP
+GO:0000387	1.1258283128972768e-11	spliceosomal snRNP assembly
+GO:0022618	2.1085865665890403e-11	ribonucleoprotein complex assembly
+GO:0071826	2.1609556981373282e-11	ribonucleoprotein complex subunit organization
+GO:0050907	4.5411948060535975e-06	detection of chemical stimulus involved in sensory perception
+GO:0007606	5.0254654430034087e-05	sensory perception of chemical stimulus
+GO:0050911	7.734801286582008e-05	detection of chemical stimulus involved in sensory perception of smell
+GO:0009593	0.0003476289111200696	detection of chemical stimulus
+GO:0050906	0.0013331404034731902	detection of stimulus involved in sensory perception
+GO:0007608	0.0017013031331939376	sensory perception of smell
+GO:0030532	4.8491213476059507e-14	small nuclear ribonucleoprotein complex
+GO:0097525	7.270234046654132e-14	spliceosomal snRNP complex
+GO:0120114	2.4242837694073993e-13	Sm-like protein family complex
+GO:0005688	6.354897112748452e-13	U6 snRNP
+GO:0046540	7.785709726281385e-10	U4/U6 x U5 tri-snRNP complex
+GO:0097526	7.785709726281385e-10	spliceosomal tri-snRNP complex
+GO:1990904	1.1658395739138888e-05	ribonucleoprotein complex
+GO:0030621	6.040713440845009e-13	U4 snRNA binding
+GO:0017069	1.7725000880530232e-10	snRNA binding
+GO:0004984	4.990104740867683e-05	olfactory receptor activity
+GO:0004888	0.003293851598805038	transmembrane signaling receptor activity
