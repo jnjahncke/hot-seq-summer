@@ -45,6 +45,8 @@ def species_annotation_df(species, annotation_type):
 
 
 
+
+
 ### Inputs a formatted text file with 3 columns of RNAseq data: Ensembl ID, log fold change, and p value
 ### Outputs an RNAseq nested dict with {key:filename: {key=geneID: value= [logFC, pvalue]}}
 def rnaseqs_to_dict(rnaseq_files):
@@ -72,6 +74,11 @@ def rnaseqs_to_dict(rnaseq_files):
   return(combined_rnaseq_dict)
 
 
+
+
+
+
+
 ## Define the function to pull a list of significantly up and down regulated genes from a dictionary of DEG data
 ## Input deg_data must be a dictionary in the format: {ensemble_ID : [logFc, pvalue]}
 def deg_list(deg_data):
@@ -84,6 +91,45 @@ def deg_list(deg_data):
   		if deg_data[gene][0] < 0:
   			genes_down.append(gene)
   return genes_up, genes_down
+
+
+
+
+
+
+### Input: 3 species names, 3 separate lists an output file name and a title ###
+### Output: a png file of a weighted venn diagram labeled with species names and a custom title ###
+
+
+# Name list and title parameters
+def make_venn_diagram(species1, species2, species3, list1, list2, list3, output_name, title):
+
+  # Color scheme for venn circles
+  colors = ['darkviolet','deepskyblue','blue']
+  
+  # Generate the diagram with passed in data
+  venn_diagram = venn3([set(list1), set(list2), set(list3)], (species1, species2, species3), set_colors = colors)
+
+  # Formatting
+  plt.title(title)
+  
+  i = 0 
+  for text in venn_diagram.set_labels:
+    text.set_fontweight('bold')
+    text.set_fontsize(16)
+    text.set_color(colors[i])
+    i+=1
+
+  for text in venn_diagram.subset_labels:
+    text.set_color('white')
+    text.set_fontsize(14)
+
+  # Output venn diagram to a png image
+  plt.savefig(f'{output_name}.png')
+
+
+
+
 
 
 def main():
