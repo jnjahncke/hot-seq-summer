@@ -3,7 +3,7 @@
 import sys
 
 def make_oma_dict():
-	oma_file = sys.argv[3]
+	oma_file = '/Users/student/project-repo/hot-seq-summer/oma-groups.txt'
 	oma_dict = {}
 
 ## create a dictionary of oma accession numbers belonging to each oma group.
@@ -33,7 +33,7 @@ key:value pairs are omaID : oma_group
 
 
 def omaID_to_ensID():
-	oma_ens_file = sys.argv[4]
+	oma_ens_file = '/Users/student/project-repo/hot-seq-summer/oma-ensembl.txt'
 	o2e_dict = {}
 ## Read in the oma to ensemble accession number table to a dictionary
 	with open(oma_ens_file, 'r') as obj:
@@ -43,7 +43,7 @@ def omaID_to_ensID():
 			else:
 				line = line.rstrip()
 				acc_list = line.split('\t')
-				o2e_dict[acc_list[0]] = acc_list[1]
+				o2e_dict[acc_list[1]] = acc_list[0]
 
 	print(f'''
 Oma to ensemble accession dict done!
