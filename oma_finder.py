@@ -4,22 +4,6 @@ import sys
 from oma_to_dict import *
 from shared_functions import * 
 
-## define the function to pull a list of significantly up and down regulated genes from a dictionary of DEG data
-## dictionary of DEG data must be in the format: {file : {gene : [logFC, pvalue]}}
-## call dictionary[file]
-
-def deg_list(deg_data):
-	
-	genes_up = []
-	genes_down = []
-	for gene in deg_data:
-		if deg_data[gene][1] < 0.05:
-			if deg_data[gene][0] > 0:
-				genes_up.append(gene)
-			if deg_data[gene][0] < 0:
-				genes_down.append(gene)
-	return genes_up, genes_down
-
 ## define the function to convert a list of ensemble IDs to oma IDs
 ## ens_list should be a list of ensemble IDs for the up or down regulated genes in a single species
 
@@ -62,7 +46,6 @@ oma_dict = make_oma_dict()
 o2e_dict = omaID_to_ensID()
 
 ## create a list of up and down regulated genes for each species using the deg_list function defined above, store the lists in new variable
-
 exp_data ={}
 
 for file in sp_data:
