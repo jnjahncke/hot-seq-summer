@@ -8,22 +8,28 @@ import sys
 
 def read_domains(test_file1, test_file2, test_file3):
 	# reads the three files, creates three lists of domains
+	diff_dict1 = {}
 	diff_domains1 = []
+	diff_dict2 = {}
 	diff_domains2 = []
+	diff_dict3 = {}
 	diff_domains3 = []
 	with open(test_file1,"r") as test1, open(test_file2,"r") as test2, open(test_file3,"r") as test3:
 		
 		for line in test1:
-			line = line.rstrip()
-			diff_domains1.append(line)
+			line = line.rstrip().split("\t")
+			diff_dict1[line[0]] = float(line[1])
+			diff_domains1.append(line[0])
 
 		for line in test2:
-			line = line.rstrip()
-			diff_domains2.append(line)
+			line = line.rstrip().split("\t")
+			diff_dict2[line[0]] = float(line[1])
+			diff_domains2.append(line[0])
 
 		for line in test3:
-			line = line.rstrip()
-			diff_domains3.append(line)
+			line = line.rstrip().split("\t")
+			diff_dict3[line[0]] = float(line[1])
+			diff_domains3.append(line[0])
 
 	return(diff_domains1, diff_domains2, diff_domains3)
 
