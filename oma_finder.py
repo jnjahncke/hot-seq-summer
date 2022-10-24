@@ -102,7 +102,6 @@ for file in down_exp_omaID:
 	down_groups[file] = {}
 	down_groups[file]['down'] = set()
 	oma_IDS = down_exp_omaID[file]['down']
-	print(oma_IDS)
 	down_groups[file] = find_oma_groups(oma_IDS)
 
 print(f'''
