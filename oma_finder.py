@@ -4,22 +4,6 @@ import sys
 from oma_to_dict import *
 from shared_functions import * 
 
-## define the function to pull a list of significantly up and down regulated genes from a dictionary of DEG data
-## dictionary of DEG data must be in the format: {file : {gene : [logFC, pvalue]}}
-## call dictionary[file]
-
-def deg_list(deg_data):
-	
-	genes_up = []
-	genes_down = []
-	for gene in deg_data:
-		if deg_data[gene][1] < 0.05:
-			if deg_data[gene][0] > 0:
-				genes_up.append(gene)
-			if deg_data[gene][0] < 0:
-				genes_down.append(gene)
-	return genes_up, genes_down
-
 ## define the function to convert a list of ensemble IDs to oma IDs
 ## ens_list should be a list of ensemble IDs for the up or down regulated genes in a single species
 
@@ -62,7 +46,6 @@ oma_dict = make_oma_dict()
 o2e_dict = omaID_to_ensID()
 
 ## create a list of up and down regulated genes for each species using the deg_list function defined above, store the lists in new variable
-
 exp_data ={}
 
 for file in sp_data:
@@ -71,8 +54,6 @@ for file in sp_data:
 	exp_data[file]['up'] = []
 	exp_data[file]['down'] = []
 	exp_data[file]['up'],exp_data[file]['down'] = deg_list(sp_data[file])
-
-print(f'Expression data: {exp_data}')
 
 print(f'''
 Up and down reg genes have been found for both species
@@ -95,8 +76,11 @@ for file in exp_data:
 	down_ensIDs = exp_data[file]['down']
 	down_exp_omaID[file]['down'] = convert_to_oma(down_ensIDs)
 
-print(f'The up reg omas are: {up_exp_omaID}')
-print(f'The down reg omas are: {down_exp_omaID}')
+print(f'''
+The up reg omas are found!
+''')
+print(f'''
+The down reg omas are found!''')
 
 up_groups = {}
 down_groups = {}
@@ -107,26 +91,29 @@ for file in up_exp_omaID:
 	up_groups[file] = {}
 	up_groups[file]['up'] = set()	
 	omaIDs = up_exp_omaID[file]['up']
-	print(omaIDs)	
 	up_groups[file] = find_oma_groups(omaIDs) 	
 
-print(f'the up reg groups are: {up_groups}')
+print(f'''
+the up reg groups are found!
+''')
 
-#up1_oma_groups = find_oma_groups(up1_omaID)
-#down1_oma_groups = find_oma_groups(down1_omaID)
-#up2_oma_groups = find_oma_groups(up2_omaID)
-#down2_oma_groups = find_oma_groups(down2_omaID)
+for file in down_exp_omaID:
 
-#print(up2_oma_groups)
+	down_groups[file] = {}
+	down_groups[file]['down'] = set()
+	oma_IDS = down_exp_omaID[file]['down']
+	print(oma_IDS)
+	down_groups[file] = find_oma_groups(oma_IDS)
+
+print(f'''
+the down reg groups are found!
+''')
 
 ## find the common oma groups up and down regulated in the species
 
-#common_ups = up1_oma_groups & up2_oma_groups
+common_ups = up_groups[sp1_file] & up_groups[sp2_file]
+common_downs = down_groups[sp1_file] & down_groups[sp2_file]
 
-#print(common_ups)
-
-
-
-
-
+print(f'''
+Commonly up regulated and down regulated oma groups found!''')
 

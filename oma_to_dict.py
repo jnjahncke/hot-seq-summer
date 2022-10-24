@@ -3,7 +3,7 @@
 import sys
 
 def make_oma_dict():
-	oma_file = sys.argv[1]
+	oma_file = sys.argv[3]
 	oma_dict = {}
 
 ## create a dictionary of oma accession numbers belonging to each oma group.
@@ -22,14 +22,14 @@ def make_oma_dict():
 					else:
 						oma_dict[gene] = group_list[0]
 
-print(f'''
+	print(f'''
 Dictionary of genes belonging to oma groups complete!
 key:value pairs are omaID : oma_group
 ''')
 
 #if 'DROSI09977' in oma_dict:
 #	print(oma_dict['DROSI09977'])
-#		return(oma_dict)
+	return(oma_dict)
 
 
 def omaID_to_ensID():
