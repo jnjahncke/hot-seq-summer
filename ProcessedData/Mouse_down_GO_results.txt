@@ -1,0 +1,388 @@
+GO_terms	p-value	description
+GO:0008152	2.9869906603627313e-65	metabolic process
+GO:0071704	2.0017987459350673e-58	organic substance metabolic process
+GO:0044238	8.607296636346396e-57	primary metabolic process
+GO:0044237	1.7279063400760554e-56	cellular metabolic process
+GO:0006807	6.885779984395831e-54	nitrogen compound metabolic process
+GO:1901564	6.445011003630866e-53	organonitrogen compound metabolic process
+GO:0044260	3.508158075002036e-49	cellular macromolecule metabolic process
+GO:0019538	5.404359291298417e-39	protein metabolic process
+GO:0043170	2.508604174045582e-37	macromolecule metabolic process
+GO:0009987	2.2381182794521583e-36	cellular process
+GO:0007049	3.2430730283388477e-35	cell cycle
+GO:0009058	2.738105465170627e-34	biosynthetic process
+GO:0043412	4.292795838198229e-33	macromolecule modification
+GO:0051301	4.946370505553123e-32	cell division
+GO:1901576	1.1798382976186783e-31	organic substance biosynthetic process
+GO:0044249	7.5013666024419055e-31	cellular biosynthetic process
+GO:0036211	3.3790283257731435e-29	protein modification process
+GO:0022402	8.616518065221165e-27	cell cycle process
+GO:1903047	3.0763148712334155e-26	mitotic cell cycle process
+GO:0051726	4.016463058718661e-26	regulation of cell cycle
+GO:0044271	1.1764117126042123e-25	cellular nitrogen compound biosynthetic process
+GO:1901566	3.142473096943096e-23	organonitrogen compound biosynthetic process
+GO:0033554	8.597613369801414e-22	cellular response to stress
+GO:0051179	1.379081863606435e-21	localization
+GO:0034641	3.785213796907954e-21	cellular nitrogen compound metabolic process
+GO:0031323	8.925476270716944e-20	regulation of cellular metabolic process
+GO:0010564	1.1776884822972866e-19	regulation of cell cycle process
+GO:0019222	1.4337624421094592e-19	regulation of metabolic process
+GO:0006996	1.6781513079835592e-19	organelle organization
+GO:0051641	1.902436669003888e-19	cellular localization
+GO:0080090	1.9559245322638384e-19	regulation of primary metabolic process
+GO:0048518	2.67397062610862e-19	positive regulation of biological process
+GO:0051234	6.495697142619835e-19	establishment of localization
+GO:0009056	6.770939924929081e-19	catabolic process
+GO:0071705	7.082416647947533e-19	nitrogen compound transport
+GO:0071702	7.880750787383147e-19	organic substance transport
+GO:1901575	2.7195837335859146e-18	organic substance catabolic process
+GO:0033043	1.5953391868227828e-17	regulation of organelle organization
+GO:0048522	1.649743235516947e-17	positive regulation of cellular process
+GO:0051171	3.3698556337637645e-17	regulation of nitrogen compound metabolic process
+GO:0006796	5.951384312694172e-17	phosphate-containing compound metabolic process
+GO:0009059	7.391084162877992e-17	macromolecule biosynthetic process
+GO:0006793	1.9611076859433877e-16	phosphorus metabolic process
+GO:0033036	2.995720135103945e-16	macromolecule localization
+GO:0033044	3.2833600920104e-16	regulation of chromosome organization
+GO:0051649	7.013404701008837e-16	establishment of localization in cell
+GO:0051276	9.920733205563337e-16	chromosome organization
+GO:0008104	1.0878889618013554e-15	protein localization
+GO:0006974	1.1997271646025803e-15	cellular response to DNA damage stimulus
+GO:0070727	1.788034008986438e-15	cellular macromolecule localization
+GO:0006518	2.1199776391024998e-15	peptide metabolic process
+GO:0044248	2.2105841388396777e-15	cellular catabolic process
+GO:0046907	3.9000711655912766e-15	intracellular transport
+GO:0009057	5.228031641338107e-15	macromolecule catabolic process
+GO:0006259	6.165052566258874e-15	DNA metabolic process
+GO:0009893	8.248663270762673e-15	positive regulation of metabolic process
+GO:0006810	1.205449035333676e-14	transport
+GO:0045184	1.7878276354460707e-14	establishment of protein localization
+GO:0006281	4.070180806785706e-14	DNA repair
+GO:0060255	4.5685972033755596e-14	regulation of macromolecule metabolic process
+GO:0065007	5.3074760596018704e-14	biological regulation
+GO:0006412	6.529840802833301e-14	translation
+GO:0051246	1.134522488850029e-13	regulation of protein metabolic process
+GO:0015031	1.7973495657208347e-13	protein transport
+GO:0070647	1.9099487861017638e-13	protein modification by small protein conjugation or removal
+GO:0043043	2.6487626222773776e-13	peptide biosynthetic process
+GO:0010604	3.89969131163504e-13	positive regulation of macromolecule metabolic process
+GO:0051128	4.2661109372837124e-13	regulation of cellular component organization
+GO:0007346	4.521361162991111e-13	regulation of mitotic cell cycle
+GO:1901987	7.328828488724204e-13	regulation of cell cycle phase transition
+GO:0048523	7.348055675455765e-13	negative regulation of cellular process
+GO:0043603	7.537056501219411e-13	amide metabolic process
+GO:0044265	9.346556743629256e-13	cellular macromolecule catabolic process
+GO:0043604	1.6335699161976092e-12	amide biosynthetic process
+GO:0044281	2.2222535343358655e-12	small molecule metabolic process
+GO:0034660	2.943141767747374e-12	ncRNA metabolic process
+GO:0050794	4.932918029495275e-12	regulation of cellular process
+GO:0051173	7.219944244329898e-12	positive regulation of nitrogen compound metabolic process
+GO:0034645	1.515664527018914e-11	cellular macromolecule biosynthetic process
+GO:0046483	1.9140549296080962e-11	heterocycle metabolic process
+GO:0018130	4.0892888801669206e-11	heterocycle biosynthetic process
+GO:0050789	5.02368301220399e-11	regulation of biological process
+GO:0006950	7.191303975297282e-11	response to stress
+GO:0051716	7.841307749977863e-11	cellular response to stimulus
+GO:0006725	1.1106187314094671e-10	cellular aromatic compound metabolic process
+GO:0071840	1.1394052450518995e-10	cellular component organization or biogenesis
+GO:0065009	1.1716732392140034e-10	regulation of molecular function
+GO:0007059	1.526508265232294e-10	chromosome segregation
+GO:0006139	1.9112736450822074e-10	nucleobase-containing compound metabolic process
+GO:0019438	2.0837616572906734e-10	aromatic compound biosynthetic process
+GO:0031325	3.1122237429335787e-10	positive regulation of cellular metabolic process
+GO:0009889	5.847324506718065e-10	regulation of biosynthetic process
+GO:1901360	6.670019438833707e-10	organic cyclic compound metabolic process
+GO:1901362	6.868496052534341e-10	organic cyclic compound biosynthetic process
+GO:0034470	8.30324925654033e-10	ncRNA processing
+GO:0032446	9.146827563023041e-10	protein modification by small protein conjugation
+GO:0043632	2.0549372137894915e-09	modification-dependent macromolecule catabolic process
+GO:0034654	2.24960615840832e-09	nucleobase-containing compound biosynthetic process
+GO:0051052	2.9301662335781827e-09	regulation of DNA metabolic process
+GO:0030163	2.9453942636745326e-09	protein catabolic process
+GO:0016567	3.950319835543343e-09	protein ubiquitination
+GO:1901990	5.203876367903792e-09	regulation of mitotic cell cycle phase transition
+GO:0010498	6.444674619311235e-09	proteasomal protein catabolic process
+GO:0050790	8.411400243061701e-09	regulation of catalytic activity
+GO:0031326	9.71398281560423e-09	regulation of cellular biosynthetic process
+GO:0044093	1.6193670665952232e-08	positive regulation of molecular function
+GO:0019637	1.6206856512787018e-08	organophosphate metabolic process
+GO:2001251	2.050875450418438e-08	negative regulation of chromosome organization
+GO:0019941	2.385369034187956e-08	modification-dependent protein catabolic process
+GO:0006511	2.5453351138775412e-08	ubiquitin-dependent protein catabolic process
+GO:0051603	3.100065896965544e-08	proteolysis involved in protein catabolic process
+GO:0006886	4.901372097713593e-08	intracellular protein transport
+GO:0051247	5.2540055608371263e-08	positive regulation of protein metabolic process
+GO:0010639	7.01059257983034e-08	negative regulation of organelle organization
+GO:0016043	8.57866602095657e-08	cellular component organization
+GO:0006417	9.975693956901454e-08	regulation of translation
+GO:0006913	1.0396199879196104e-07	nucleocytoplasmic transport
+GO:0051169	1.0396199879196104e-07	nuclear transport
+GO:0048519	1.2067167324434144e-07	negative regulation of biological process
+GO:0140694	1.2260600377527805e-07	non-membrane-bounded organelle assembly
+GO:0006399	1.2685590889274008e-07	tRNA metabolic process
+GO:0090407	1.3310878804419442e-07	organophosphate biosynthetic process
+GO:0045786	1.9198460456928799e-07	negative regulation of cell cycle
+GO:1901565	2.1331801903679016e-07	organonitrogen compound catabolic process
+GO:0006508	2.412536387586696e-07	proteolysis
+GO:0009894	3.274540645610159e-07	regulation of catabolic process
+GO:0045787	4.0700233478921604e-07	positive regulation of cell cycle
+GO:0051983	4.243422153697467e-07	regulation of chromosome segregation
+GO:0043161	5.253927252087541e-07	proteasome-mediated ubiquitin-dependent protein catabolic process
+GO:0000278	6.195235772960238e-07	mitotic cell cycle
+GO:0010965	6.589761548986235e-07	regulation of mitotic sister chromatid separation
+GO:2000112	6.796961421949419e-07	regulation of cellular macromolecule biosynthetic process
+GO:0010948	6.852655257841106e-07	negative regulation of cell cycle process
+GO:0033045	7.863502342125906e-07	regulation of sister chromatid segregation
+GO:0010556	8.832050068025815e-07	regulation of macromolecule biosynthetic process
+GO:0034248	9.177987556934976e-07	regulation of amide metabolic process
+GO:0033047	9.627196406561818e-07	regulation of mitotic sister chromatid segregation
+GO:0031329	1.4628852533815436e-06	regulation of cellular catabolic process
+GO:0007051	1.535275415297947e-06	spindle organization
+GO:0045930	4.228004088360528e-06	negative regulation of mitotic cell cycle
+GO:0044770	7.0493946974081584e-06	cell cycle phase transition
+GO:0033046	7.666301838888784e-06	negative regulation of sister chromatid segregation
+GO:0033048	7.666301838888784e-06	negative regulation of mitotic sister chromatid segregation
+GO:2000816	7.666301838888784e-06	negative regulation of mitotic sister chromatid separation
+GO:0007017	8.047549442277526e-06	microtubule-based process
+GO:0000075	9.719208399994931e-06	cell cycle checkpoint signaling
+GO:0043085	1.177089679599154e-05	positive regulation of catalytic activity
+GO:0006413	1.2725528433692921e-05	translational initiation
+GO:1901988	1.3550830445920562e-05	negative regulation of cell cycle phase transition
+GO:1905818	1.4012286749652381e-05	regulation of chromosome separation
+GO:0051985	1.78751919216884e-05	negative regulation of chromosome segregation
+GO:1905819	1.78751919216884e-05	negative regulation of chromosome separation
+GO:1901135	1.9397305101114936e-05	carbohydrate derivative metabolic process
+GO:0006753	2.1331680043216827e-05	nucleoside phosphate metabolic process
+GO:0007094	2.728611209517959e-05	mitotic spindle assembly checkpoint signaling
+GO:0071174	2.728611209517959e-05	mitotic spindle checkpoint signaling
+GO:0071173	2.728611209517959e-05	spindle assembly checkpoint signaling
+GO:0044772	2.8342784037398604e-05	mitotic cell cycle phase transition
+GO:0006091	2.870214738105778e-05	generation of precursor metabolites and energy
+GO:1902850	2.901246895282035e-05	microtubule cytoskeleton organization involved in mitosis
+GO:0009117	3.02359979800012e-05	nucleotide metabolic process
+GO:0010389	3.0437359434465878e-05	regulation of G2/M transition of mitotic cell cycle
+GO:0051129	3.130718881023553e-05	negative regulation of cellular component organization
+GO:0016072	3.4846169413567706e-05	rRNA metabolic process
+GO:0051988	3.515833213970582e-05	regulation of attachment of spindle microtubules to kinetochore
+GO:2001020	3.712364863362816e-05	regulation of response to DNA damage stimulus
+GO:0019219	3.9368561284053774e-05	regulation of nucleobase-containing compound metabolic process
+GO:0031577	4.227653265219305e-05	spindle checkpoint signaling
+GO:0051168	4.584171109517573e-05	nuclear export
+GO:0033365	4.6048451017776596e-05	protein localization to organelle
+GO:0010638	4.624745810224834e-05	positive regulation of organelle organization
+GO:0044087	4.7867092725464034e-05	regulation of cellular component biogenesis
+GO:0090068	4.845258334867912e-05	positive regulation of cell cycle process
+GO:0007093	5.842349140802637e-05	mitotic cell cycle checkpoint signaling
+GO:0007088	6.328458487501813e-05	regulation of mitotic nuclear division
+GO:0045841	6.436462204982675e-05	negative regulation of mitotic metaphase/anaphase transition
+GO:0048583	6.437834213380673e-05	regulation of response to stimulus
+GO:0006364	6.804963616232276e-05	rRNA processing
+GO:0006260	7.245889597110143e-05	DNA replication
+GO:0051130	7.392913685101323e-05	positive regulation of cellular component organization
+GO:0030071	9.532943564337334e-05	regulation of mitotic metaphase/anaphase transition
+GO:0090304	0.00010297750618291772	nucleic acid metabolic process
+GO:0060341	0.00010966193459331976	regulation of cellular localization
+GO:0008033	0.00011496210293704425	tRNA processing
+GO:0009891	0.00011608476293645286	positive regulation of biosynthetic process
+GO:0045839	0.0001161870910447518	negative regulation of mitotic nuclear division
+GO:0000226	0.00011886276598078047	microtubule cytoskeleton organization
+GO:1901991	0.00012734787085688678	negative regulation of mitotic cell cycle phase transition
+GO:1902100	0.0001422429455225022	negative regulation of metaphase/anaphase transition of cell cycle
+GO:0042127	0.0001604327382288816	regulation of cell population proliferation
+GO:0035556	0.00016376180716080286	intracellular signal transduction
+GO:1902099	0.00017547692812784204	regulation of metaphase/anaphase transition of cell cycle
+GO:0055086	0.00022137548298224122	nucleobase-containing small molecule metabolic process
+GO:0018193	0.0003068708935846286	peptidyl-amino acid modification
+GO:0032465	0.0003144619238508388	regulation of cytokinesis
+GO:1902749	0.0003292854840765969	regulation of cell cycle G2/M phase transition
+GO:0015931	0.00036541101017006434	nucleobase-containing compound transport
+GO:0051256	0.00036919529978772004	mitotic spindle midzone assembly
+GO:1901137	0.00037155043251734096	carbohydrate derivative biosynthetic process
+GO:0031324	0.0004411958706964369	negative regulation of cellular metabolic process
+GO:1901293	0.00045660682860956077	nucleoside phosphate biosynthetic process
+GO:0043254	0.0005541362809899115	regulation of protein-containing complex assembly
+GO:0044085	0.0006749352897350299	cellular component biogenesis
+GO:0009144	0.0007044063175209376	purine nucleoside triphosphate metabolic process
+GO:0032204	0.0008293311517264936	regulation of telomere maintenance
+GO:0006163	0.0008806960738011465	purine nucleotide metabolic process
+GO:0031328	0.0009962206358859512	positive regulation of cellular biosynthetic process
+GO:0016310	0.0010619476773988902	phosphorylation
+GO:0009165	0.0011152432924825277	nucleotide biosynthetic process
+GO:0010468	0.0011359789021373455	regulation of gene expression
+GO:0070925	0.0012479916906831235	organelle assembly
+GO:0045727	0.0014463104226762316	positive regulation of translation
+GO:0080135	0.0017272966254634461	regulation of cellular response to stress
+GO:0051784	0.0017633369912011876	negative regulation of nuclear division
+GO:0019693	0.0017852052490627194	ribose phosphate metabolic process
+GO:0072521	0.0018046900553346902	purine-containing compound metabolic process
+GO:0009141	0.0020182240260325076	nucleoside triphosphate metabolic process
+GO:0006406	0.0020892340047785865	mRNA export from nucleus
+GO:0080134	0.0020932571164902734	regulation of response to stress
+GO:0051028	0.0021638238295161524	mRNA transport
+GO:0045333	0.002702859428334379	cellular respiration
+GO:0071478	0.002721268454184396	cellular response to radiation
+GO:0098813	0.002737111068938767	nuclear chromosome segregation
+GO:0015980	0.003001690802952286	energy derivation by oxidation of organic compounds
+GO:2001252	0.0030141729186466547	positive regulation of chromosome organization
+GO:0034250	0.0031679383219549496	positive regulation of amide metabolic process
+GO:0048193	0.00333437556655255	Golgi vesicle transport
+GO:0009966	0.003982143174671496	regulation of signal transduction
+GO:0006275	0.004046933449155514	regulation of DNA replication
+GO:0046034	0.0041155924922271865	ATP metabolic process
+GO:0051172	0.004541697291378178	negative regulation of nitrogen compound metabolic process
+GO:0009205	0.004779670446866572	purine ribonucleoside triphosphate metabolic process
+GO:0009259	0.005273335301943939	ribonucleotide metabolic process
+GO:0031399	0.00545153097626515	regulation of protein modification process
+GO:0000819	0.005570425992299332	sister chromatid segregation
+GO:0006888	0.005602593434891416	endoplasmic reticulum to Golgi vesicle-mediated transport
+GO:0051236	0.006008028777512635	establishment of RNA localization
+GO:0000281	0.006154658499505869	mitotic cytokinesis
+GO:1904356	0.006154658499505869	regulation of telomere maintenance via telomere lengthening
+GO:0046390	0.006192003738720032	ribose phosphate biosynthetic process
+GO:0051783	0.0068012530397418315	regulation of nuclear division
+GO:0010557	0.007009447547265735	positive regulation of macromolecule biosynthetic process
+GO:0022613	0.008629619153786901	ribonucleoprotein complex biogenesis
+GO:0051225	0.008672677011560827	spindle assembly
+GO:0032880	0.00948843471388289	regulation of protein localization
+GO:0043231	2.7038164766382906e-127	intracellular membrane-bounded organelle
+GO:0043227	1.4444485908946546e-125	membrane-bounded organelle
+GO:0043229	3.707618127910157e-101	intracellular organelle
+GO:0043226	2.7285412945575423e-99	organelle
+GO:0110165	1.574369086239441e-69	cellular anatomical entity
+GO:0005634	4.5432024679756577e-66	nucleus
+GO:0005737	6.675639066869158e-64	cytoplasm
+GO:1902494	1.127871827846535e-47	catalytic complex
+GO:0005829	2.2182564965616302e-44	cytosol
+GO:0032991	7.579059515020948e-43	protein-containing complex
+GO:0005739	1.2856015505531493e-33	mitochondrion
+GO:0140535	2.1974577973559306e-33	intracellular protein-containing complex
+GO:0005654	1.4977043611883737e-31	nucleoplasm
+GO:1990234	4.247640468961995e-29	transferase complex
+GO:0031090	8.895753891611865e-26	organelle membrane
+GO:0000775	3.1548751740522248e-24	chromosome, centromeric region
+GO:0098687	4.9093914709157865e-21	chromosomal region
+GO:0000776	4.461374520850849e-17	kinetochore
+GO:0005694	8.743762469731606e-15	chromosome
+GO:0005815	6.499708550897554e-14	microtubule organizing center
+GO:0005819	1.305988467631963e-13	spindle
+GO:0098798	3.849180417692074e-13	mitochondrial protein-containing complex
+GO:0019866	1.3168178910359847e-12	organelle inner membrane
+GO:0005743	2.1466052554034426e-12	mitochondrial inner membrane
+GO:0005813	2.4357053453548878e-12	centrosome
+GO:0031966	5.951628210033634e-12	mitochondrial membrane
+GO:0000922	1.136700481331419e-10	spindle pole
+GO:0043232	1.9613254523038656e-08	intracellular non-membrane-bounded organelle
+GO:0043228	1.976293600826171e-08	non-membrane-bounded organelle
+GO:0000151	2.7556734892032216e-08	ubiquitin ligase complex
+GO:0099080	3.886793308718519e-08	supramolecular complex
+GO:0030496	4.347257752344935e-08	midbody
+GO:0098588	5.856533444790247e-08	bounding membrane of organelle
+GO:0044391	1.1486750604935192e-06	ribosomal subunit
+GO:0098800	1.6716569189303675e-06	inner mitochondrial membrane protein complex
+GO:0072686	6.103418140774689e-06	mitotic spindle
+GO:0031461	6.28465306942268e-06	cullin-RING ubiquitin ligase complex
+GO:0061695	4.383452001935841e-05	transferase complex, transferring phosphorus-containing groups
+GO:0005856	0.00019651562791806344	cytoskeleton
+GO:0016604	0.0004268567809024351	nuclear body
+GO:0005783	0.0004662300427565505	endoplasmic reticulum
+GO:0000502	0.0006659321048219	proteasome complex
+GO:0031080	0.0011803869200940607	nuclear pore outer ring
+GO:0043209	0.0013069696960114569	myelin sheath
+GO:0005876	0.001807674483243938	spindle microtubule
+GO:0005874	0.005069423577404502	microtubule
+GO:0035770	0.005612285214394984	ribonucleoprotein granule
+GO:0098796	0.0067744151233810924	membrane protein complex
+GO:0005875	0.006788229908477724	microtubule associated complex
+GO:0015935	0.006898041624045553	small ribosomal subunit
+GO:0000940	0.00716776578188666	outer kinetochore
+GO:0005789	0.007656584137431665	endoplasmic reticulum membrane
+GO:0034708	0.008974173711541092	methyltransferase complex
+GO:0003824	1.104584698744824e-59	catalytic activity
+GO:0005488	3.64380900250048e-55	binding
+GO:0005515	1.4118904623829934e-35	protein binding
+GO:0043167	2.969512624003072e-33	ion binding
+GO:0000166	3.473578218831613e-24	nucleotide binding
+GO:1901265	3.473578218831613e-24	nucleoside phosphate binding
+GO:0036094	3.318629911686233e-23	small molecule binding
+GO:0043168	1.0951882149533245e-20	anion binding
+GO:0016740	1.4530371238154934e-19	transferase activity
+GO:0035639	2.1143697206161393e-19	purine ribonucleoside triphosphate binding
+GO:0032553	1.0464093289280898e-18	ribonucleotide binding
+GO:0032555	1.0898430767995106e-18	purine ribonucleotide binding
+GO:0017076	1.868674585549268e-18	purine nucleotide binding
+GO:0019899	5.4928008035922376e-18	enzyme binding
+GO:0016787	5.951734112630951e-18	hydrolase activity
+GO:0140640	5.731836464748802e-17	catalytic activity, acting on a nucleic acid
+GO:0097367	2.253596750575462e-16	carbohydrate derivative binding
+GO:1901363	2.315371138654897e-16	heterocyclic compound binding
+GO:0097159	2.5800200784045865e-16	organic cyclic compound binding
+GO:0005524	3.1771499818931877e-16	ATP binding
+GO:0003674	6.104939763068217e-16	molecular_function
+GO:0032559	1.6581343801366632e-15	adenyl ribonucleotide binding
+GO:0030554	4.166155371451005e-15	adenyl nucleotide binding
+GO:0016462	1.3761911024635262e-13	pyrophosphatase activity
+GO:0016818	1.5091864273251267e-13	hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides
+GO:0016817	1.5091864273251267e-13	hydrolase activity, acting on acid anhydrides
+GO:0140098	1.2293917136779816e-12	catalytic activity, acting on RNA
+GO:0140096	5.671876709477607e-12	catalytic activity, acting on a protein
+GO:0140657	1.1122793129098666e-11	ATP-dependent activity
+GO:0043169	1.3031162288886692e-11	cation binding
+GO:0017111	2.0380481172836983e-11	ribonucleoside triphosphate phosphatase activity
+GO:0046872	1.3208159188851077e-10	metal ion binding
+GO:0016887	4.618715446984077e-09	ATP hydrolysis activity
+GO:0044877	2.4006759705496905e-08	protein-containing complex binding
+GO:0045182	2.9751118645689347e-07	translation regulator activity
+GO:0043021	3.7938162542627745e-07	ribonucleoprotein complex binding
+GO:0090079	1.9955737229131902e-06	translation regulator activity, nucleic acid binding
+GO:0016788	2.8255781667680563e-06	hydrolase activity, acting on ester bonds
+GO:0000287	5.017955450277598e-06	magnesium ion binding
+GO:0016874	8.241712579650798e-06	ligase activity
+GO:0000049	9.690722384725823e-06	tRNA binding
+GO:0042802	1.0547902261578753e-05	identical protein binding
+GO:0008135	1.0845319628370768e-05	translation factor activity, RNA binding
+GO:0019900	1.4670553071727237e-05	kinase binding
+GO:0003743	1.9857519198689487e-05	translation initiation factor activity
+GO:0019901	5.175661818432378e-05	protein kinase binding
+GO:0004386	5.3179205225382986e-05	helicase activity
+GO:0016772	0.00015046345193734433	transferase activity, transferring phosphorus-containing groups
+GO:0030234	0.00033863204442660883	enzyme regulator activity
+GO:0008047	0.0003714095950189024	enzyme activator activity
+GO:0140097	0.0007387654627920787	catalytic activity, acting on DNA
+GO:0008186	0.0007781974540047778	ATP-dependent activity, acting on RNA
+GO:0003724	0.0031995109369828286	RNA helicase activity
+GO:0003676	0.0036568572307472185	nucleic acid binding
+GO:0140101	0.00526028387436777	catalytic activity, acting on a tRNA
+GO:0016791	0.007325128324853375	phosphatase activity
+GO:0007600	5.2777149097988785e-28	sensory perception
+GO:0050906	8.123921443964241e-25	detection of stimulus involved in sensory perception
+GO:0009593	9.888666859153757e-24	detection of chemical stimulus
+GO:0007606	4.7048702903138465e-23	sensory perception of chemical stimulus
+GO:0050907	5.246370307002885e-23	detection of chemical stimulus involved in sensory perception
+GO:0051606	8.2340478897978805e-22	detection of stimulus
+GO:0050911	4.929235945523002e-21	detection of chemical stimulus involved in sensory perception of smell
+GO:0007186	9.936465401572854e-21	G protein-coupled receptor signaling pathway
+GO:0007608	4.288705129513446e-18	sensory perception of smell
+GO:0050877	2.779485256418211e-17	nervous system process
+GO:0000244	1.6148396284257581e-15	spliceosomal tri-snRNP complex assembly
+GO:0000353	1.3013667337526073e-14	formation of quadruple SL/U4/U5/U6 snRNP
+GO:0003008	1.5955265977037396e-10	system process
+GO:0000387	2.140479531053682e-06	spliceosomal snRNP assembly
+GO:0016441	0.0007501370236902217	post-transcriptional gene silencing
+GO:0035195	0.0010199433591552166	miRNA-mediated gene silencing
+GO:0035194	0.0010601175361120714	RNA-mediated post-transcriptional gene silencing
+GO:0032501	0.001989641343316493	multicellular organismal process
+GO:0005688	5.231696843265004e-12	U6 snRNP
+GO:0030532	8.556767581375048e-10	small nuclear ribonucleoprotein complex
+GO:0097525	1.218372375206559e-09	spliceosomal snRNP complex
+GO:0046540	1.9841118162111868e-07	U4/U6 x U5 tri-snRNP complex
+GO:0097526	1.9841118162111868e-07	spliceosomal tri-snRNP complex
+GO:0120114	1.0293913652385814e-06	Sm-like protein family complex
+GO:0005576	0.002005817376817268	extracellular region
+GO:0038023	4.579946477543516e-24	signaling receptor activity
+GO:0060089	4.579946477543516e-24	molecular transducer activity
+GO:0004930	6.458319251857781e-24	G protein-coupled receptor activity
+GO:0004888	6.054993369358284e-23	transmembrane signaling receptor activity
+GO:0004984	8.004399283398087e-21	olfactory receptor activity
+GO:0030621	9.29888731466986e-14	U4 snRNA binding
+GO:0017069	1.1421460194249767e-10	snRNA binding
+GO:0005549	6.128314531862137e-07	odorant binding

@@ -1,10 +1,11 @@
 #! /usr/bin/env python3
-
+#install goatools and wget using pip
 import goatools 
 from goatools import obo_parser 
 import wget
 import os
 import sys
+
 
 from shared_functions import *
 
@@ -12,19 +13,32 @@ from shared_functions import *
 def main():
   go = import_OBO()
 
-
+# this variable establishes the connection between annotation file and RNA-seq files of species. 
   file_dict = [["hsapiens_go_id.txt","HUMAN_genes.txt","Human"],["mmusculus_go_id.txt","mus_rna_seq_final.txt","Mouse"],["scerevisiae_go_id.txt","yeast_degs.txt","Yeast"]]
+
+  go_sets = {}
+
   for species in file_dict:
     annot_dict = read_annot("RawData/"+species[0])
-	
- #  annot_dict = read_annot("RawData/hsapiens_go_id.txt")
+ #  annot_dict = read_annot("RawData/hsapiens_go_id.txt") # you can use this command to read from annotation file from directory
     pop = set(annot_dict.keys()) 
     study_dict = rnaseqs_to_dict(["RawData/"+species[1]])
     study_up,study_down = deg_list(study_dict["RawData/"+species[1]])
+    up_list = GO_enrichment(pop, annot_dict, go, study_up, species[2]+"_up") 
+    down_list = GO_enrichment(pop, annot_dict, go, study_down, species[2]+"_down")
+    if species[2] not in go_sets:
+      go_sets[species[2]] = {}
+      go_sets[species[2]]["up"] = up_list
+      go_sets[species[2]]["down"] = down_list			
+    else:
+      go_sets[species[2]]["up"] = up_list
+      go_sets[species[2]]["down"] = down_list			
+  		
+# make 2 vein diagrams with commonly up-regulated and commonly downregulated genes among three species      
+  make_venn_diagram(file_dict[0][2], file_dict[1][2], file_dict[2][2], go_sets[file_dict[0][2]]["up"],go_sets[file_dict[1][2]]["up"],go_sets[file_dict[2][2]]["up"], "ProcessedData/common_upregulated_GO_terms", "Commonly up-regulated GO terms") 
 
-    GO_enrichment(pop, annot_dict, go, study_up, species[2]+"_up") 
-    GO_enrichment(pop, annot_dict, go, study_down, species[2]+"_down")
-
+  make_venn_diagram(file_dict[0][2], file_dict[1][2], file_dict[2][2], go_sets[file_dict[0][2]]["down"],go_sets[file_dict[1][2]]["down"],go_sets[file_dict[2][2]]["down"], "ProcessedData/common_downregulated_GO_terms", "Commonly down-regulated GO terms") 
+	
 ### function to import OBO a database with all GO terms. 
 def import_OBO():
   go_obo_url = 'http://purl.obolibrary.org/obo/go/go-basic.obo'
@@ -76,16 +90,21 @@ def GO_enrichment (pop, annot_dict, go, study, name):
 
   s_bonferroni = []
   for x in g_bonferroni_res:
-    if x.p_bonferroni <= 0.001:
+    if x.p_bonferroni <= 0.01:
       s_bonferroni.append((x.goterm.id,x.p_bonferroni, x.goterm.name)) # you can modify this parameters and print more things. You just need to dig into docomentation to find how they are called
 
 
 	# write the results into a file
-  with open (name+"_GO_results.txt","w") as f:
+  with open ("ProcessedData/"+name+"_GO_results.txt","w") as f:
     f.write("GO_terms\tp-value\tdescription\n")
     for term in s_bonferroni:
       f.write(f'{term[0]}\t{term[1]}\t{term[2]}\n')
-      return set(s_bonferroni[0]) 
+
+  sig_list = []
+  for i in s_bonferroni:
+    sig_list.append(i[0])
+  return(sig_list)
+ 
 
 if __name__ == "__main__":
   main()

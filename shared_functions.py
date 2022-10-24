@@ -128,7 +128,7 @@ def make_venn_diagram(species1, species2, species3, list1, list2, list3, output_
 
   # Output venn diagram to a png image
   plt.savefig(f'{output_name}.png')
-
+  plt.clf()
 
 
 
