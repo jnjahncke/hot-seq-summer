@@ -57,7 +57,7 @@ def parse_filenames(file1, file2, file3):
 	file_list = [file1, file2, file3]
 	species_list = []
 	diff_direction = []
-	species_dict = {"mmusculus":"Mouse", "hsapiens":"Human", "scerevisiae":"Yeast"}
+	species_dict = {"mmusculus":"M. musculus", "hsapiens":"H. sapiens", "scerevisiae":"S. cerevisiae"}
 	for file in file_list:
 		for found in re.finditer(r"/(\w+?)_(\w+?)reg",file):
 			species_list.append(species_dict[found.group(1)])
