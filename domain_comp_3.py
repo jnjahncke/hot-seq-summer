@@ -5,25 +5,33 @@
 # Output: which domains are enriched in all lists?
 
 import sys
+from shared_functions import *
+import re
 
 def read_domains(test_file1, test_file2, test_file3):
 	# reads the three files, creates three lists of domains
+	diff_dict1 = {}
 	diff_domains1 = []
+	diff_dict2 = {}
 	diff_domains2 = []
+	diff_dict3 = {}
 	diff_domains3 = []
 	with open(test_file1,"r") as test1, open(test_file2,"r") as test2, open(test_file3,"r") as test3:
 		
 		for line in test1:
-			line = line.rstrip()
-			diff_domains1.append(line)
+			line = line.rstrip().split("\t")
+			diff_dict1[line[0]] = float(line[1])
+			diff_domains1.append(line[0])
 
 		for line in test2:
-			line = line.rstrip()
-			diff_domains2.append(line)
+			line = line.rstrip().split("\t")
+			diff_dict2[line[0]] = float(line[1])
+			diff_domains2.append(line[0])
 
 		for line in test3:
-			line = line.rstrip()
-			diff_domains3.append(line)
+			line = line.rstrip().split("\t")
+			diff_dict3[line[0]] = float(line[1])
+			diff_domains3.append(line[0])
 
 	return(diff_domains1, diff_domains2, diff_domains3)
 
@@ -44,6 +52,19 @@ def pfam_id_to_desc(pfamID_list, pfam_dict):
 	desc_list = []
 	[desc_list.append(pfam_dict[ID]) for ID in pfamID_list]
 	return(desc_list)
+
+def parse_filenames(file1, file2, file3):
+	file_list = [file1, file2, file3]
+	species_list = []
+	diff_direction = []
+	species_dict = {"mmusculus":"Mouse", "hsapiens":"Human", "scerevisiae":"Yeast"}
+	for file in file_list:
+		for found in re.finditer(r"/(\w+?)_(\w+?)reg",file):
+			species_list.append(species_dict[found.group(1)])
+			diff_direction.append(found.group(2))
+	species1, species2, species3 = species_list
+	diff_direction = diff_direction[0]
+	return(species1, species2, species3, diff_direction)
 
 def main():
 
@@ -86,6 +107,13 @@ def main():
 	# Look up pfam descriptions for each pfam ID
 	shared_descriptions = pfam_id_to_desc(shared, pfam_dict)
 	[print(desc) for desc in shared_descriptions]
+
+	# visualize as venn diagram
+	species1, species2, species3, diff_direction = parse_filenames(test_file1, test_file2, test_file3)
+	make_venn_diagram(species1, species2, species3, # names of species
+					diff_domains1, diff_domains2, diff_domains3, # input lists of domains
+					 "ProcessedData/"+diff_direction+"_domains_venn", # output file name
+					 diff_direction.capitalize()+"regulated Domains") # plot title
 
 
 if __name__ == "__main__":
