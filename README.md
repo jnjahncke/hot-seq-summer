@@ -41,6 +41,6 @@ RNAseq datasets looking at differentially expressed genes in response to heat st
       * The number of shared domains between all three lists
       * The number of domains only enriched in list1/2/3
       * For each shared domain: the description for the corresponding pfam ID
-    * Exports .png of venn diagram showing overlap of domains (`domain_comp_2.py` only).
+    * Exports .png of venn diagram showing overlap of domains (`domain_comp_3.py` only).
   * In order to look up the domain description from pfam ID:
     * Download `pfamA.txt` from [pfam FTP](https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/): `wget “https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/pfamA.txt.gz”`; extract necessary columns and output to new .txt file with `awk -F"\t" '{print $1 "\t" $4}' pfamA.txt > pfam2desc.txt`
