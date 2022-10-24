@@ -108,7 +108,7 @@ def main():
 	for domain in set(domains_all):
 		prob = hypergeometry(domain, domains_all, domains_diff)
 		if prob < 0.05:
-			print(f'{domain}\t{prob}')
+			print(f'{domain}')
 
 	sys.exit(0)
 
