@@ -25,7 +25,7 @@ RNAseq datasets looking at differentially expressed genes in response to heat st
 
 ##### Visualizing data (Venn Diagram):
 
-`venn_diagram()` takes three lists and creates a venn diagram to show overlap between the lists; outputs to .png. **To run:** `venn_diagram(species1, species2, species3, list1, list2, list3, output_name, title)`.
+`venn_diagram()` takes three lists and creates a venn diagram to show overlap between the lists; outputs to .png. **To run:** `venn_diagram(species1, species2, species3, list1, list2, list3, output_name, title)`. (This function is based off of `make_venn_diagram.py `.)
 
 ### Enriched Domains:
 
