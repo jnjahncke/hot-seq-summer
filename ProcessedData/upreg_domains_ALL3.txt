@@ -1,0 +1,16 @@
+# list1:	ProcessedData/mmusculus_upreg_domains.txt
+# list2:	ProcessedData/hsapiens_upreg_domains.txt
+# list3:	ProcessedData/scerevisiae_upreg_domains.txt
+# list1 (all):	162
+# list2 (all):	230
+# list3 (all):	84
+# shared:	4
+# only in list1:	142
+# only in list2:	211
+# only in list3:	71
+# 
+# Shared enriched domains:
+Activator of Hsp90 ATPase, N-terminal
+DnaJ C terminal domain
+Hsp70 protein
+bZIP transcription factor

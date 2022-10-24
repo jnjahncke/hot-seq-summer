@@ -2,3 +2,4 @@ __pychache__/
 *.pyc
 .DS_Store
 .pybiomart.sqlite
+.ipynb_checkpoints/

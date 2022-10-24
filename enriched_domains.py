@@ -12,7 +12,7 @@
 
 import sys
 from math import comb
-from rnaseq_to_dict import *
+from shared_functions import *
 
 # Probability mass function
 # Takes a specific domain, list of all domains, and a list of domains from diff expressed genes
@@ -32,7 +32,7 @@ def hypergeometry(domain,domains_all,domains_diff):
 # create domain dictionary
 def make_domain_dict(species):
 	domain_dict = {}
-	with open(species + "_pfam.txt","r") as file_in:
+	with open("ProcessedData/" + species + "_pfam.txt","r") as file_in:
 		for line in file_in:
 			line = line.rstrip().split("\t")
 			if line[0] not in domain_dict:
@@ -82,11 +82,11 @@ def main():
 
 	# get gene dict using rna_seqs_to_dict
 	if species == "mmusculus":
-		input_file = "mus_rna_seq_final.txt"
+		input_file = "RawData/mus_rna_seq_final.txt"
 	elif species == "hsapiens":
-		input_file = "HUMAN_genes.txt"
+		input_file = "RawData/HUMAN_genes.txt"
 	elif species == "scerevisiae":
-		input_file = "yeast_degs.txt"
+		input_file = "RawData/yeast_degs.txt"
 	gene_dict = rnaseqs_to_dict([input_file]) # defned in rnaseq_to_dict.py
 	gene_dict = gene_dict[list(gene_dict.keys())[0]]
 
@@ -108,7 +108,7 @@ def main():
 	for domain in set(domains_all):
 		prob = hypergeometry(domain, domains_all, domains_diff)
 		if prob < 0.05:
-			print(f'{domain}\t{prob}')
+			print(f'{domain}')
 
 	sys.exit(0)
 
