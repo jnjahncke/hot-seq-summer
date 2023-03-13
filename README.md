@@ -1,5 +1,7 @@
 # hot-seq-summer
 
+Group project for CSHL Programming for Biology 2022. What genes/domains/GO terms are up/downregulated in response to heat shock? Which of these heat shock responses are conserved across species (human, mouse, yeast)?
+
 ### Datasets:
 
 RNAseq datasets looking at differentially expressed genes in response to heat stress.
